@@ -6,7 +6,7 @@ class productoControllers
 {
     public function index (){
         $producto = new producto();
-        $producto = $producto->getAll();
+        $productos = $producto->getAll();
 
         require_once __DIR__ . "/../views/producto/index.php";
     }

@@ -20,7 +20,7 @@ class Database{
     }
 
     public function conectar(){
-        $dsn = "mysql:host={$this->host};port={$this->port};dbname={this->dbname}";
+        $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbName}";
         $this->connection = new PDO($dsn, "$this->user","$this->pwd");
 
         return $this->connection;
