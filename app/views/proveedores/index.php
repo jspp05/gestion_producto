@@ -1,6 +1,6 @@
 <h1>Listado De Proveedores</h1>
 
-<table>
+<table border="1">
     <tr>
         <th>id</th>
         <th>nombre</th>

@@ -25,5 +25,14 @@ FROM producto p JOIN proveedores pr ON p.proveedores_id=pr.id";
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
 
     }
+
+    public function getByid($id){
+        $sql= "SELECT * FROM producto WHERE id= $id";
+        $consulta = $this->connection->query($sql);
+        
+        return $consulta->fetch(PDO::FETCH_ASSOC);
+    }
+
+
 };
 ?>
