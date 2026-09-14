@@ -14,9 +14,8 @@ require_once __DIR__ ."/../app/controllers/proveedorControllers.php";
 $proveedorControllers= new proveedorControllers();
 $proveedorControllers->index();
 
- $ProductoController = new productoControllers();
-    if (isset($_GET['id'])) {
-        $ProductoController->show ($_GET['id']);
-    } else {
-        $ProductoController->index();
-    }
+require_once __DIR__ ."/../app/controllers/categoriaControllers.php";
+$categoriaControllers= new categoriaControllers();
+$categoriaControllers->index(); 
+
+

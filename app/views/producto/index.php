@@ -27,11 +27,12 @@
         <th>precio</th>
         
     </tr>
+    <?php foreach ($productos as $producto): ?>
     <tr>
         <td><?= $productoConsultado["id"]?> </td>
         <td><?= $productoConsultado["nombre"]?> </td>
         <td><?= $productoConsultado["precio"]?> </td>
       </tr>
-
+    <?php endforeach; ?>
 </table>
 
