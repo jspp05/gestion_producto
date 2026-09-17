@@ -1,8 +1,9 @@
 <?php
 
-require_once __DIR__ ."/../../config/Database.php";
+require_once __DIR__ . "/../../config/Database.php";
 
-class producto{
+class producto
+{
     private $connection;
 
     public function __construct()
@@ -25,16 +26,13 @@ JOIN categoria c ON p.categoria_id=c.id";
         $consulta = $this->connection->query($sql);
 
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
-
     }
 
-    public function getByid($id){
-        $sql= "SELECT * FROM producto WHERE id= $id";
+    public function getByid($id)
+    {
+        $sql = "SELECT * FROM producto WHERE id= $id";
         $consulta = $this->connection->query($sql);
-        
+
         return $consulta->fetch(PDO::FETCH_ASSOC);
     }
-
-
 };
-?>

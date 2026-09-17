@@ -19,4 +19,14 @@ class cliente{
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
 
     }
-};
+
+        public function getByid($id)
+    {
+        $sql = "SELECT * FROM clientes WHERE id = :id";
+        $consulta = $this->connection->prepare($sql);
+        $consulta->bindParam(":id", $id);
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    }
+}

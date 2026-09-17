@@ -19,5 +19,16 @@ class Proveedor{
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
 
     }
-};
+
+        public function getByid($id)
+    {
+        $sql = "SELECT * FROM proveedores WHERE id = :id";
+        $consulta = $this->connection->prepare($sql);
+        $consulta->bindParam(":id", $id);
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    }
+}
+
 ?>

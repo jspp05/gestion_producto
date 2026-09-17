@@ -6,9 +6,18 @@ class productoControllers
 {
     public function index (){
         $producto = new producto();
-        $productos = $producto->getAll();
+      
+        try{
+            $productos = $producto->getAll();
+        }catch(PDOException){
+            echo "No se encontraron productos";
+        }
 
-        $productoConsultado = $producto->getByid(1);
+        try{
+            $productoConsultado = $producto->getByid(1);
+        }catch(PDOException){
+            echo "No se encontró el producto";
+        }
 
         require_once __DIR__ . "/../views/producto/index.php";
     }

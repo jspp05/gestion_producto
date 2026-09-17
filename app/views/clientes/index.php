@@ -1,5 +1,6 @@
 <h1>Listado De Clientes</h1>
 
+<?php if (!empty($clientes)) { ?>
 <table border="1">
     <tr>
         <th>nombre</th>
@@ -16,3 +17,6 @@
       </tr>
     <?php endforeach; ?>
 </table>
+<?php } else { ?>
+    <p>No hay clientes disponibles.</p>
+<?php } ?>

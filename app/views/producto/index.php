@@ -1,5 +1,6 @@
 <h1>Listado De Producto</h1>
 
+<?php if (!empty($productos)) { ?>
 <table border="1">
     <tr>
       <th>id</th>
@@ -18,6 +19,9 @@
       </tr>
     <?php endforeach; ?>
 </table>
+<?php } else { ?>
+    <p>No hay productos disponibles.</p>
+<?php } ?>
 
 <h1>Producto Consultado</h1>
 <table border="1"> 
@@ -27,11 +31,11 @@
         <th>precio</th>
         
     </tr>
-    <?php foreach ($productos as $producto): ?>
+    <?php foreach ($productosConsultados as $producto): ?>
     <tr>
-        <td><?= $productoConsultado["id"]?> </td>
-        <td><?= $productoConsultado["nombre"]?> </td>
-        <td><?= $productoConsultado["precio"]?> </td>
+        <td><?= $producto["id"]?> </td>
+        <td><?= $producto["nombre"]?> </td>
+        <td><?= $producto["precio"]?> </td>
       </tr>
     <?php endforeach; ?>
 </table>
